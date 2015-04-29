@@ -1,0 +1,30 @@
+<div class='main-container'>
+    <div class='main-title'>
+        <h2>Create new expense claim</h2>
+        <p>All expense claims should be sent until 25th day so they will be included
+        for the salary of the current month. Choose the right option for you and fill
+        up the form. Save it for later modifying or send it for approval.</p>
+    </div>
+    <!-- The whole form-area starts here -->
+    <div class='form-container'>
+        <div id='travel-expense-finland' class='sub-form-container'>
+            <input type="checkbox" ng-click="showTravelFin = ! showTravelFin">
+            <label>Travel expense Finland, daily allowances</label>
+            <div ng-show="showTravelFin">
+                <form>
+                <div ng-repeat="i in getNumber(counter) track by $index">
+                    <data-ng-include src="'./app/views/form-travel-finland.html'"></data-ng-include>
+                    <button type="button" ng-click="showOther = ! showOther">+ Add cost</button>
+                    <div ng-show="showOther">
+                        <data-ng-include src="'./app/views/form-other.html'"></data-ng-include>
+                    </div>
+                </div>
+                </form>
+                <a href="" ng-click="change()">+ Add new row</a>
+            </div>
+            
+        </div>
+    
+    
+    </div>
+</div>

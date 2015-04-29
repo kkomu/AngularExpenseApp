@@ -1,0 +1,14 @@
+.sub-form-container {
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    padding: 10px;
+}
+
+fieldset {
+    border-width: 0px;
+}
+
+.form-table-1 {
+    border-spacing: 5px;
+}
