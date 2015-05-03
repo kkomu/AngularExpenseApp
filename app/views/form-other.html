@@ -1,15 +1,15 @@
 <fieldset>
     <table border="0" class="form-table-1">
         <tr>
-            <td><label for="dateOther">Date</label></td>
-            <td><input type="date" name="dateOther"></td>
-            <td><label for="txtDesc">Description</label></td>
-            <td><input type="text" name="txtDesc"></td>
-            <td><label for="txtPrice">Price</label></td>
-            <td><input type="text" name="txtPrice"></td>
-            <td><label for="txtPcs">Price</label></td>
-            <td><input type="text" name="txtPcs"></td>
-            <td><input type="file" name="attachedfile" allow="image/*"></td>
+            <td><label>Date</label></td>
+            <td><input ng-model="otherExpense.purchaseDate" type="date" name="purchaseDate"></td>
+            <td><label>Description</label></td>
+            <td><input ng-model="otherExpense.description" type="text" name="description"></td>
+            <td><label>Price</label></td>
+            <td><input ng-model="otherExpense.price" type="text" name="price"></td>
+            <td><label>Amount</label></td>
+            <td><input ng-model="otherExpense.amount" type="text" name="amount"></td>
+            <td><input ng-model="otherExpense.attachedFile" type="file" name="attachedFile" allow="image/*"></td>
         </tr>
     </table>
 </fieldset>

@@ -7,24 +7,41 @@
     </div>
     <!-- The whole form-area starts here -->
     <div class='form-container'>
-        <div id='travel-expense-finland' class='sub-form-container'>
-            <input type="checkbox" ng-click="showTravelFin = ! showTravelFin">
-            <label>Travel expense Finland, daily allowances</label>
-            <div ng-show="showTravelFin">
-                <form>
-                <div ng-repeat="i in getNumber(counter) track by $index">
-                    <data-ng-include src="'./app/views/form-travel-finland.html'"></data-ng-include>
-                    <button type="button" ng-click="showOther = ! showOther">+ Add cost</button>
-                    <div ng-show="showOther">
-                        <data-ng-include src="'./app/views/form-other.html'"></data-ng-include>
+        <data-ng-form>
+            <!-- Form for Travel Expense Finland -->
+            <div id='travel-expense-finland' class='sub-form-container'>
+                <input type="checkbox" ng-click="showFormTravelFin = !showFormTravelFin">
+                <label>Travel expense Finland, daily allowances</label>
+                <div data-ng-show="showFormTravelFin">
+
+                    <div ng-repeat="i in travelFinCounter track by $index">
+                        <data-ng-include data-ng-controller="TravelExpenseFinController" src="'./app/views/form-travel-finland.html'"></data-ng-include>
+                        <button type="button" ng-click="showOther = !showOther">+ Add cost</button>
+                        <div ng-show="showOther">
+                            <data-ng-include data-ng-controller="OtheExpenseController" src="'./app/views/form-other.html'"></data-ng-include>
+                        </div>
                     </div>
+                    <a href="" ng-click="newTravelFinForm()">+ Add new row</a>
+                    <a href="" ng-click="removeTravelFinForm()">- Delete row</a>
                 </div>
-                </form>
-                <a href="" ng-click="change()">+ Add new row</a>
             </div>
-            
-        </div>
-    
-    
+            <!-- Form for Travel Foreign Travel Expense -->
+            <div id='travel-expense-foreign' class='sub-form-container'>
+                <input type="checkbox" ng-click="showFormTravelFor = !showFormTravelFor">
+                <label>Travel expense other country, daily allowances</label>
+                <div data-ng-show="showFormTravelFor">
+
+                    <div ng-repeat="i in travelForCounter track by $index">
+                        <data-ng-include data-ng-controller="TravelExpenseForController" src="'./app/views/form-travel-foreign.html'"></data-ng-include>
+                        <button type="button" ng-click="showOther = !showOther">+ Add cost</button>
+                        <div ng-show="showOther">
+                            <data-ng-include data-ng-controller="OtheExpenseController" src="'./app/views/form-other.html'"></data-ng-include>
+                        </div>
+                    </div>
+                    <a href="" ng-click="newTravelForForm()">+ Add new row</a>
+                    <a href="" ng-click="removeTravelForForm()">- Delete row</a>
+                </div>
+            </div>
+        </data-ng-form>
     </div>
 </div>

@@ -1,0 +1,8 @@
+{
+  "name": "arcutravel",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2"
+  }
+}
